@@ -11,6 +11,7 @@ async function fetchData() {
     const response = await fetch(url, options);
     const result = await response.json()
 
-    document.getElementById("neighborhoods").innerHTML = result.data.map(item => item.name)
+    document.getElementById("neighborhoods").innerHTML =
+    result.data.map(item => `<li>${item.name}</li>`).join("");
 }
 fetchData();
